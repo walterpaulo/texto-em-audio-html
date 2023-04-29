@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualbasic,eclipse,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualbasic,eclipse,visualstudiocode
 
+###
+dist/
+
+
 ### Eclipse ###
 .metadata
 bin/
