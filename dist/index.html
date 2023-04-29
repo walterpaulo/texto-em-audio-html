@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Texto em Voz</title>
+    
+    <script type="module" crossorigin src="/assets/index-beb7626b.js"></script>
+    <link rel="stylesheet" href="/assets/index-378e6984.css">
+  </head>
+  <body>
+    <div class="container text-center">
+        <div class="row my-3">
+            <div class="col">
+                <h2 class="text-center">Converte Texto em Voz</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded  position-relative">
+                    <span id="contador" class="badge bg-secondary position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+                    <textarea class="rounded border form-control shadow-none text-body p-3 w-100" id="texto" cols="30" rows="10">
+                    </textarea>
+                    <select class="d-block my-3 border w-100 py-3 form-control shadow-none" name="voz" id="voz"></select>
+                    <button class="btn btn-primary d-block my-3 w-100 py-3 fw-bold lh-sm text-capitalize" id="btn-converter">Converter</button>
+                    <!-- <span class="text-danger">Navegador não é compatível</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
