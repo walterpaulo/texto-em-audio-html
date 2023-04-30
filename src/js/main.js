@@ -4,7 +4,6 @@ import '../scss/styles.scss'
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
 
-
 let voz = document.getElementById("voz");
 let texto = document.getElementById("texto");
 let button = document.getElementById("btn-converter");
@@ -30,7 +29,6 @@ window.speechSynthesis.addEventListener("voiceschanged", () => {
         option.innerHTML = vozes[i].name;
         voz.appendChild(option);
     }
-
 })
 
 button.addEventListener("click", () => {
@@ -44,9 +42,6 @@ button.addEventListener("click", () => {
 
             utterance.voice = vozes[vozSelecionada]
             window.speechSynthesis.speak(utterance)
-
-            console.log(window.speechSynthesis)
-
         }
     }
 })
