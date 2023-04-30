@@ -1,31 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Texto em Voz</title>
-    
-    <script type="module" crossorigin src="assets/index-beb7626b.js"></script>
-    <link rel="stylesheet" href="assets/index-378e6984.css">
-  </head>
-  <body>
-    <div class="container text-center">
-        <div class="row my-3">
-            <div class="col">
-                <h2 class="text-center">Converte Texto em Voz</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="shadow p-3 mb-5 bg-body-tertiary rounded  position-relative">
-                    <span id="contador" class="badge bg-secondary position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
-                    <textarea class="rounded border form-control shadow-none text-body p-3 w-100" id="texto" cols="30" rows="10">
-                    </textarea>
-                    <select class="d-block my-3 border w-100 py-3 form-control shadow-none" name="voz" id="voz"></select>
-                    <button class="btn btn-primary d-block my-3 w-100 py-3 fw-bold lh-sm text-capitalize" id="btn-converter">Converter</button>
-                </div>
-            </div>
-        </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Texto em Voz</title>
+  
+  <script type="module" crossorigin src="assets/index-09cab60c.js"></script>
+  <link rel="stylesheet" href="assets/index-378e6984.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <div class="row my-3">
+      <div class="col">
+        <h2 class="text-center">Converte Texto em Voz</h2>
+      </div>
     </div>
-  </body>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="shadow p-3 mb-5 bg-body-tertiary rounded  position-relative">
+          <span id="contador"
+            class="badge bg-secondary position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+          <textarea class="rounded border form-control shadow-none text-body p-3 w-100" id="texto" cols="30" rows="10">
+                    </textarea>
+          <select class="d-block my-3 border w-100 py-3 form-control shadow-none" name="voz" id="voz"></select>
+          <button class="btn btn-primary d-block my-3 w-100 py-3 fw-bold lh-sm text-capitalize"
+            id="btn-converter">Converter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+      <div class="row">
+        <div class="col-lg-3 mb-3">
+          <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/"
+            aria-label="Bootstrap" title="Walter Paulo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2" viewBox="0 0 118 94"
+              role="img">
+              <title>Walter Paulo</title>
+              <image
+                href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjQ5MDcgMjcuNjQxOEM0LjE0NDU1IDIyLjMxNjggMy4zMTY3OSAxMi44NTU1IDguNjQxODEgNi41MDkzM1Y2LjUwOTMzQzEzLjk2NjggMC4xNjMyMTQgMjMuNDI4MiAtMC42NjQ1NDYgMjkuNzc0MyA0LjY2MDQ4VjQuNjYwNDhDMzYuMTIwNCA5Ljk4NTUxIDM2Ljk0ODIgMTkuNDQ2OCAzMS42MjMxIDI1Ljc5M0wyMS45ODEzIDM3LjI4MzZMMTAuNDkwNyAyNy42NDE4WiIgZmlsbD0iIzBCMEY2NCIvPgo8cGF0aCBkPSJNMTggMzdIMjZWNDBIMThWMzdaIiBmaWxsPSIjMEIwRjY0Ii8+CjxwYXRoIGQ9Ik0zMC44NSA4LjU0TDI2LjM2IDIzSDIzLjkzTDIwLjc3IDEzLjEyQzIwLjY4MzMgMTIuODggMjAuNjAzMyAxMi41ODY3IDIwLjUzIDEyLjI0QzIwLjQ5IDEyLjQwNjcgMjAuNDUgMTIuNTYzMyAyMC40MSAxMi43MUMyMC4zNyAxMi44NTY3IDIwLjMyNjcgMTIuOTkzMyAyMC4yOCAxMy4xMkwxNy4wOSAyM0gxNC42NUwxMC4xNyA4LjU0SDEyLjQyQzEyLjY1MzMgOC41NCAxMi44NDY3IDguNTk2NjcgMTMgOC43MUMxMy4xNiA4LjgxNjY3IDEzLjI2NjcgOC45NjMzMyAxMy4zMiA5LjE1TDE1Ljc4IDE3LjhDMTUuODMzMyAxOC4wMTMzIDE1Ljg4MzMgMTguMjQ2NyAxNS45MyAxOC41QzE1Ljk4MzMgMTguNzQ2NyAxNi4wMzY3IDE5LjAwNjcgMTYuMDkgMTkuMjhDMTYuMTQzMyAxOSAxNi4yIDE4LjczNjcgMTYuMjYgMTguNDlDMTYuMzI2NyAxOC4yNDMzIDE2LjM5NjcgMTguMDEzMyAxNi40NyAxNy44TDE5LjMxIDkuMTVDMTkuMzYzMyA4Ljk5NjY3IDE5LjQ2NjcgOC44NTY2NyAxOS42MiA4LjczQzE5Ljc4IDguNjAzMzMgMTkuOTczMyA4LjU0IDIwLjIgOC41NEgyMC45OUMyMS4yMjMzIDguNTQgMjEuNDEzMyA4LjU5NjY3IDIxLjU2IDguNzFDMjEuNzA2NyA4LjgyMzMzIDIxLjgxNjcgOC45NyAyMS44OSA5LjE1TDI0LjcyIDE3LjhDMjQuODYgMTguMjEzMyAyNC45ODY3IDE4LjY5IDI1LjEgMTkuMjNDMjUuMTg2NyAxOC43MDMzIDI1LjI4MzMgMTguMjI2NyAyNS4zOSAxNy44TDI3Ljg1IDkuMTVDMjcuODkgOC45ODMzMyAyNy45OSA4Ljg0IDI4LjE1IDguNzJDMjguMzE2NyA4LjYgMjguNTEzMyA4LjU0IDI4Ljc0IDguNTRIMzAuODVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
+                x="0" y="0" width="118" height="94" />
+            </svg>
+            <span class="fs-5">Walter Paulo</span>
+          </a>
+          <ul class="list-unstyled small">
+            <li class="mb-2">Graduado em Sistemas de Informação na <a href="https://faculdadedelta.com.br/"
+                target="_blank" title="Faculdade Delta">Faculdade Delta</a>, desenvolvedor de software <a
+                href="https://www.walterpaulo.com.br/" target="_blank" title="sobre mim">sobre mim</a>.</li>
+            <li>
+              <span>Acesse o código do projeto que <a href="https://github.com/walterpaulo/texto-em-audio-html">Texto em Audio html</a>.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          <h5>Tecnologias para Backend</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a>Java</a></li>
+            <li class="mb-2"><a>Node Js</a></li>
+            <li class="mb-2"><a>Ruby on Rails (RoR)</a></li>
+            <li class="mb-2"><a>Python</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Tecnologias para Frontend</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a>Angula JS</a></li>
+            <li class="mb-2"><a>HTML/CSS</a></li>
+            <li class="mb-2"><a>JavaScript</a></li>
+            <li class="mb-2"><a>React JS</a></li>
+            <li class="mb-2"><a>Thymeleaf</a></li>
+            <li class="mb-2"><a>Vite JS</a></li>
+            <li class="mb-2"><a>Webpack</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Estudante em Devops</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a>Ansible</a></li>
+            <li class="mb-2"><a>Docker</a></li>
+            <li class="mb-2"><a>Docker Swa</a></li>
+            <li class="mb-2"><a>GNU/Linux</a></li>
+            <li class="mb-2"><a>Terraform</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Tutorias</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://github.com/walterpaulo/treinamento21DiasJava/blob/main/README.md"
+                target="_blank" title="Desafio 21 dias em Java">Desafio 21 dias em Java</a></li>
+            <li class="mb-2"><a href="https://github.com/walterpaulo/logica-python/blob/main/README.md" target="_blank"
+                title="Desafio 21 dias de lógica em Python">Desafio 21 dias de lógica em Python</a></li>
+            <li class="mb-2"><a href="https://github.com/walterpaulo/Desafio-DevOps-21-dias/blob/master/README.md"
+                target="_blank" title="Desafio 21 dias em DevOps">Desafio 21 dias em DevOps</a></li>
+            <li class="mb-2"><a
+                href="https://www.linkedin.com/posts/walter-paulo-37b215117_base-para-api-activity-6927166536197517312-HMQT?utm_source=linkedin_share&utm_medium=member_desktop_web"
+                target="_blank" title="Base para construção de API">Base para construção de API</a></li>
+            <li class="mb-2"><a
+                href="https://www.linkedin.com/posts/walter-paulo-37b215117_rails-partials-activity-6927258404386127872--AZi?utm_source=linkedin_share&utm_medium=member_desktop_web"
+                target="_blank" title="Renderização de páginas HTML - Ruby on Rails">Renderização de páginas HTML - Ruby
+                on Rails</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
